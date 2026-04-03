@@ -2,7 +2,7 @@
 
 Last updated: March 30, 2026
 
-This privacy policy applies to the Application (herein referred to as "Application") for mobile devices, which was created by **yananob** (herein referred to as "Service Provider") as a Free/Freemium service.
+This privacy policy applies to the Application (herein referred to as "Application") for mobile devices, which was created by **RUN the TRAIL** (herein referred to as "Service Provider") as a Free/Freemium service.
 
 ## 1. Information Collection and Use
 The Application does not require users to create an account or provide personally identifiable information to use its core features. 
