@@ -20,7 +20,7 @@ Welcome to **RUN the TRAIL**, a sole proprietorship dedicated to software innova
 
 ### 🌐 Connect
 
-* **SNS:** [GitHub](https://github.com/yananob) | [Twitter / X](https://twitter.com/your_handle) | [YouTube](#) | Strava | News Picks
+* **SNS:** [GitHub](https://github.com/yananob) | [Twitter / X](https://twitter.com/your_handle) | [YouTube](#)
 * **Contact:** [Inquiry Form](https://docs.google.com/forms/your-google-form-id) (Google Form)
 
 ---
