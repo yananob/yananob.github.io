@@ -1,6 +1,12 @@
-Hi there, I'm yananob! 👋
+# RUN the TRAIL
 
-I'm a software engineer based in Osaka, Japan.  
+Welcome to **RUN the TRAIL**, a sole proprietorship dedicated to software innovation and technical excellence.
+
+### 🛠 What We Do
+
+* **Web & Mobile App Development:** Crafting seamless digital experiences across platforms.
+* **Consulting Services:** Leveraging extensive software engineering knowledge to provide strategic technical guidance.
+* **Knowledge Sharing:** Actively contributing to the tech community through information dissemination and insights.
 
 ---
 
@@ -12,7 +18,7 @@ I'm a software engineer based in Osaka, Japan.
 
 ---
 
-### 🌐 Connect with Me
+### 🌐 Connect
 
 * **SNS:** [GitHub](https://github.com/yananob) | [Twitter / X](https://twitter.com/your_handle) | [YouTube](#) | Strava | News Picks
 * **Contact:** [Inquiry Form](https://docs.google.com/forms/your-google-form-id) (Google Form)
