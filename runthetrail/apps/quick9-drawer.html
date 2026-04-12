@@ -1,1 +1,140 @@
-update me
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick9 Drawer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2, h3 { color: #111; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 2rem 0; }
+        ul { padding-left: 1.5rem; }
+        p { margin: 1rem 0; }
+        pre { background: #f6f8fa; padding: 1rem; overflow: auto; border-radius: 6px; }
+        code { font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 85%; }
+    </style>
+</head>
+<body>
+<h1>Quick9 Drawer</h1>
+<p>A fast, keyboard-driven Android app drawer inspired by App Swap. Use the T9 keypad interface to search and launch apps at lightning speed.</p>
+<h2>Core Features</h2>
+<ul>
+<li><strong>T9 Incremental Search</strong>: Quickly narrow down apps using a 3x4 T9 keypad. Supports English and normalized characters (removal of accents).</li>
+<li><strong>Auto-Launch (Zero-Tap)</strong>: Automatically launches the app if the search query is 2 or more characters long and there is exactly one candidate.</li>
+<li><strong>Frequency-Based Sorting</strong>: Prioritizes apps with higher launch counts. Ties are broken by ascending name order.</li>
+<li><strong>Biometric App Lock</strong>: Protect specific apps using Android&#39;s biometric authentication (Fingerprint, Face, PIN). (Requires Pro upgrade).</li>
+<li><strong>Transparent UI</strong>: A modern dialog-style interface with a transparent background.</li>
+<li><strong>Guide Display</strong>: Long-press any button on the T9 keypad to see a hover description of its function.</li>
+<li><strong>Persistent Cache &amp; Auto-Update</strong>: Achieves fast startup by caching app metadata in JSON format. Automatically updates the cache when app configuration changes (install/uninstall) are detected at startup.</li>
+<li><strong>Manual Cache Refresh</strong>: Rebuild the cache manually from the settings screen if the app list is not up-to-date.</li>
+<li><strong>Debug Error Display</strong>: In debug builds, displays a detailed stack trace if data export/import fails, allowing it to be copied to the clipboard.</li>
+</ul>
+<h2>External Specifications</h2>
+<h3>Search and Filtering</h3>
+<ul>
+<li><strong>Algorithm</strong>: Supports prefix matching for the entire app name or each word (delimited by spaces, hyphens, underscores, dots).</li>
+<li><strong>T9 Mapping</strong>: Standard mapping (2: ABC, 3: DEF, 4: GHI, 5: JKL, 6: MNO, 7: PQRS, 8: TUV, 9: WXYZ).</li>
+<li><strong>Normalization</strong>: Search is case-insensitive and ignores diacritical marks (e.g., &quot;á&quot; matches &quot;a&quot;).</li>
+</ul>
+<h3>Auto-Launch Conditions</h3>
+<p>The app will automatically launch if all the following conditions are met:</p>
+<ol>
+<li>The numeric query length is <strong>2 or more characters</strong>.</li>
+<li>There is <strong>exactly one</strong> app candidate after filtering.</li>
+</ol>
+<h3>Pro Upgrade (Paid Option)</h3>
+<p>The &quot;App Lock&quot; feature is provided as a paid option (Pro upgrade).</p>
+<ul>
+<li><strong>Price</strong>: $1</li>
+<li><strong>Upgrade Method</strong>: Select &quot;Upgrade to Pro ($1)&quot; from the settings dialog (<code>#</code> key) and purchase via the Google Play Store.</li>
+<li><strong>Functionality</strong>: Pro upgrade enables locking and unlocking of apps.</li>
+</ul>
+<h3>UI and Operations</h3>
+<ul>
+<li><strong>T9 Keypad</strong>:<ul>
+<li><strong>Long-press</strong> each key to display its functional description.</li>
+<li><code>1</code> (backspace): Backspace (delete one character)</li>
+<li><code>*</code> (clear): Clear query</li>
+<li><code>0</code> (hide): Hide keypad (expand app list)</li>
+<li><code>#</code> (config): Show settings dialog</li>
+</ul>
+</li>
+<li><strong>App Icons</strong>:<ul>
+<li><strong>Single Tap</strong>: Launch app (shows biometric authentication if locked).</li>
+<li><strong>Long Press</strong>: Toggle app lock on/off.</li>
+</ul>
+</li>
+<li><strong>Auto-Reset</strong>: Automatically shows the keypad and resets the scroll position to the top when the query changes or the app returns to the foreground.</li>
+</ul>
+<h2>Project Structure</h2>
+<p>The project follows a simplified Clean Architecture using manual Dependency Injection (DI).</p>
+<pre><code>app/src/main/java/io/github/yananob/quick9drawer/
+├── data/           # Specific implementation of the data layer
+│   └── AppRepositoryImpl.kt  # Handling PackageManager and SharedPreferences
+├── domain/         # Business logic layer (Pure Kotlin/Android Interface)
+│   ├── AppInfo.kt            # App data model
+│   ├── AppRepository.kt      # Repository interface
+│   ├── SearchAppUseCase.kt   # Search algorithm and auto-launch logic
+│   └── SearchResult.kt       # Search result including highlight range
+└── presentation/   # UI layer (Jetpack Compose)
+    ├── MainActivity.kt       # Entry point and manual DI implementation
+    ├── MainViewModel.kt      # State management and search orchestration
+    ├── MainScreen.kt         # Main UI layout
+    └── T9Keypad.kt           # Custom T9 keypad component
+</code></pre>
+<h2>Implementation Policies</h2>
+<ul>
+<li><strong>Error Handling</strong>: When an error occurs, implement detailed logs that can be copied to the clipboard to help users identify the cause. Especially in debug builds, display an error dialog including the stack trace.</li>
+</ul>
+<h2>Technical Details</h2>
+<h3>Persistence</h3>
+<p>Data is saved in the following four <code>SharedPreferences</code> files:</p>
+<ul>
+<li><code>app_usage</code>: Stores launch counts and last-used timestamps.</li>
+<li><code>app_cache</code>: Caches app metadata in JSON format to speed up initial startup.</li>
+<li><code>app_lock</code>: Stores the lock status (boolean) for each app.</li>
+<li><code>app_premium</code>: Stores the Pro upgrade purchase status.</li>
+</ul>
+<h3>Dependency Injection (DI)</h3>
+<p>Manual DI is performed within <code>MainActivity</code> using <code>ViewModelProvider.Factory</code>. Hilt and KSP were removed for build simplification and environment compatibility.</p>
+<h3>Key Libraries</h3>
+<ul>
+<li><strong>Jetpack Compose</strong>: Modern UI toolkit.</li>
+<li><strong>Material 3</strong>: Latest design components.</li>
+<li><strong>Biometric</strong>: AndroidX Biometric library for secure app locking.</li>
+<li><strong>Coroutines &amp; Flow</strong>: Reactive and asynchronous data processing.</li>
+</ul>
+<h2>Build and Development</h2>
+<h3>Requirements</h3>
+<ul>
+<li><strong>JDK</strong>: 17</li>
+<li><strong>Android SDK</strong>: Compile SDK 36, Target SDK 36, Min SDK 28</li>
+</ul>
+<h3>Key Commands</h3>
+<ul>
+<li><strong>Build Debug APK</strong>: <code>./gradlew assembleDebug</code></li>
+<li><strong>Run Unit Tests</strong>: <code>./gradlew test</code></li>
+<li><strong>Clean Project</strong>: <code>./gradlew clean</code></li>
+</ul>
+<h3>Switching Pro Mode in Debug Builds</h3>
+<p>In debug builds, you can easily toggle Pro mode (purchased state).</p>
+<ol>
+<li>Open the settings screen (<code>#</code> key).</li>
+<li>Tap the word &quot;access&quot; in the description <strong>6 times</strong>.</li>
+<li>Wait for <strong>1 second</strong> (tapping 7 or more times will reset the count).</li>
+<li>The Pro mode state will flip. You can check the current state by the &quot;Pro Status&quot; in the settings screen or the display of the purchase button.</li>
+</ol>
+<h2>License</h2>
+<p>MIT License</p>
+
+</body>
+</html>
