@@ -1,6 +1,6 @@
 # RUN the TRAIL
 
-Welcome to **RUN the TRAIL**, a sole proprietorship dedicated to software innovation and technical excellence.
+Welcome to **RUN the TRAIL**, a software development organization dedicated to software innovation and technical excellence.
 
 ### 🛠 What We Do
 
@@ -12,7 +12,7 @@ Welcome to **RUN the TRAIL**, a sole proprietorship dedicated to software innova
 
 ### 📂 Portfolio
 
-* **Android App:** [Google Play Store](#)
+* **Android App:** [Quick9 Drawer](apps/quick9-drawer.html)
 * **Web App:** [Live Demo](#)
 * **Kindle Book:** [Amazon Store](#)
 
@@ -20,8 +20,8 @@ Welcome to **RUN the TRAIL**, a sole proprietorship dedicated to software innova
 
 ### 🌐 Connect
 
-* **SNS:** [GitHub](https://github.com/yananob) | [Twitter / X](https://twitter.com/your_handle) | [YouTube](#)
-* **Contact:** [Inquiry Form](https://docs.google.com/forms/your-google-form-id) (Google Form)
+* **SNS:** [GitHub](https://github.com/yananob) | Twitter / X | YouTube
+* **Contact:** [Inquiry Form](https://forms.gle/RDmvDTy8ppUmsom19) (Google Form)
 
 ---
 
