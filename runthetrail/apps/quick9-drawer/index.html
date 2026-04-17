@@ -164,49 +164,6 @@
     <li><strong>Debug Error Display</strong>: In debug builds, displays a detailed stack trace if data export/import fails.</li>
 </ul>
 
-<h2>External Specifications</h2>
-<h3>Search and Filtering</h3>
-<ul>
-    <li><strong>Algorithm</strong>: Supports prefix matching for the entire app name or each word (delimited by spaces, hyphens, underscores, dots).</li>
-    <li><strong>T9 Mapping</strong>: Standard mapping (2: ABC, 3: DEF, 4: GHI, 5: JKL, 6: MNO, 7: PQRS, 8: TUV, 9: WXYZ).</li>
-    <li><strong>Normalization</strong>: Search is case-insensitive and ignores diacritical marks (e.g., "á" matches "a").</li>
-</ul>
-
-<h3>Auto-Launch Conditions</h3>
-<p>The app will automatically launch if all the following conditions are met:</p>
-<ol>
-    <li>The numeric query length is <strong>2 or more characters</strong>.</li>
-    <li>There is <strong>exactly one</strong> app candidate after filtering.</li>
-</ol>
-
-<h3>Pro Upgrade (Paid Option)</h3>
-<p>The "App Lock" feature is provided as a paid option (Pro upgrade).</p>
-<ul>
-    <li><strong>Price</strong>: $1</li>
-    <li><strong>Upgrade Method</strong>: Select "Upgrade to Pro ($1)" from the settings dialog (<code>#</code> key) and purchase via the Google Play Store.</li>
-    <li><strong>Functionality</strong>: Pro upgrade enables locking and unlocking of apps.</li>
-</ul>
-
-<h3>UI and Operations</h3>
-<ul>
-    <li><strong>T9 Keypad</strong>:
-        <ul>
-            <li><strong>Long-press</strong> each key to display its functional description.</li>
-            <li><code>1</code> (backspace): Backspace (delete one character)</li>
-            <li><code>*</code> (clear): Clear query</li>
-            <li><code>0</code> (hide): Hide keypad (expand app list)</li>
-            <li><code>#</code> (config): Show settings dialog</li>
-        </ul>
-    </li>
-    <li><strong>App Icons</strong>:
-        <ul>
-            <li><strong>Single Tap</strong>: Launch app (shows biometric authentication if locked).</li>
-            <li><strong>Long Press</strong>: Toggle app lock on/off.</li>
-        </ul>
-    </li>
-    <li><strong>Auto-Reset</strong>: Automatically shows the keypad and resets the scroll position to the top when the query changes or the app returns to the foreground.</li>
-</ul>
-
 <h2>License</h2>
 <p>MIT License</p>
 
