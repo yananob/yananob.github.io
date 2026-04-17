@@ -75,64 +75,6 @@
 </li>
 <li><strong>Auto-Reset</strong>: Automatically shows the keypad and resets the scroll position to the top when the query changes or the app returns to the foreground.</li>
 </ul>
-<h2>Project Structure</h2>
-<p>The project follows a simplified Clean Architecture using manual Dependency Injection (DI).</p>
-<pre><code>app/src/main/java/io/github/yananob/quick9drawer/
-├── data/           # Specific implementation of the data layer
-│   └── AppRepositoryImpl.kt  # Handling PackageManager and SharedPreferences
-├── domain/         # Business logic layer (Pure Kotlin/Android Interface)
-│   ├── AppInfo.kt            # App data model
-│   ├── AppRepository.kt      # Repository interface
-│   ├── SearchAppUseCase.kt   # Search algorithm and auto-launch logic
-│   └── SearchResult.kt       # Search result including highlight range
-└── presentation/   # UI layer (Jetpack Compose)
-    ├── MainActivity.kt       # Entry point and manual DI implementation
-    ├── MainViewModel.kt      # State management and search orchestration
-    ├── MainScreen.kt         # Main UI layout
-    └── T9Keypad.kt           # Custom T9 keypad component
-</code></pre>
-<h2>Implementation Policies</h2>
-<ul>
-<li><strong>Error Handling</strong>: When an error occurs, implement detailed logs that can be copied to the clipboard to help users identify the cause. Especially in debug builds, display an error dialog including the stack trace.</li>
-</ul>
-<h2>Technical Details</h2>
-<h3>Persistence</h3>
-<p>Data is saved in the following four <code>SharedPreferences</code> files:</p>
-<ul>
-<li><code>app_usage</code>: Stores launch counts and last-used timestamps.</li>
-<li><code>app_cache</code>: Caches app metadata in JSON format to speed up initial startup.</li>
-<li><code>app_lock</code>: Stores the lock status (boolean) for each app.</li>
-<li><code>app_premium</code>: Stores the Pro upgrade purchase status.</li>
-</ul>
-<h3>Dependency Injection (DI)</h3>
-<p>Manual DI is performed within <code>MainActivity</code> using <code>ViewModelProvider.Factory</code>. Hilt and KSP were removed for build simplification and environment compatibility.</p>
-<h3>Key Libraries</h3>
-<ul>
-<li><strong>Jetpack Compose</strong>: Modern UI toolkit.</li>
-<li><strong>Material 3</strong>: Latest design components.</li>
-<li><strong>Biometric</strong>: AndroidX Biometric library for secure app locking.</li>
-<li><strong>Coroutines &amp; Flow</strong>: Reactive and asynchronous data processing.</li>
-</ul>
-<h2>Build and Development</h2>
-<h3>Requirements</h3>
-<ul>
-<li><strong>JDK</strong>: 17</li>
-<li><strong>Android SDK</strong>: Compile SDK 36, Target SDK 36, Min SDK 28</li>
-</ul>
-<h3>Key Commands</h3>
-<ul>
-<li><strong>Build Debug APK</strong>: <code>./gradlew assembleDebug</code></li>
-<li><strong>Run Unit Tests</strong>: <code>./gradlew test</code></li>
-<li><strong>Clean Project</strong>: <code>./gradlew clean</code></li>
-</ul>
-<h3>Switching Pro Mode in Debug Builds</h3>
-<p>In debug builds, you can easily toggle Pro mode (purchased state).</p>
-<ol>
-<li>Open the settings screen (<code>#</code> key).</li>
-<li>Tap the word &quot;access&quot; in the description <strong>6 times</strong>.</li>
-<li>Wait for <strong>1 second</strong> (tapping 7 or more times will reset the count).</li>
-<li>The Pro mode state will flip. You can check the current state by the &quot;Pro Status&quot; in the settings screen or the display of the purchase button.</li>
-</ol>
 <h2>License</h2>
 <p>MIT License</p>
 
