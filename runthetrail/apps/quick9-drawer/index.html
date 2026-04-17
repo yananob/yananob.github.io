@@ -5,78 +5,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick9 Drawer</title>
     <style>
+        :root {
+            --primary-color: #0366d6;
+            --text-color: #24292e;
+            --bg-color: #ffffff;
+            --secondary-bg: #f6f8fa;
+            --border-color: #e1e4e8;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
         }
-        h1, h2, h3 { color: #111; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        hr { border: 0; border-top: 1px solid #eee; margin: 2rem 0; }
-        ul { padding-left: 1.5rem; }
-        p { margin: 1rem 0; }
-        pre { background: #f6f8fa; padding: 1rem; overflow: auto; border-radius: 6px; }
-        code { font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 85%; }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.5rem; }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #f6f8fa 0%, #e1e4e8 100%);
+            padding: 3rem 1rem;
+            border-radius: 12px;
+        }
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .screenshot-item {
+            text-align: center;
+        }
+        .screenshot-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .screenshot-item img:hover {
+            transform: scale(1.02);
+        }
+
+        h2 { color: #111; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem; margin-top: 2.5rem; }
+        h3 { margin-top: 1.5rem; }
+        ul, ol { padding-left: 1.5rem; }
+        pre { background: var(--secondary-bg); padding: 1rem; overflow: auto; border-radius: 6px; border: 1px solid var(--border-color); }
+        code { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 85%; }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-card {
+            background: var(--secondary-bg);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card h3 { margin-top: 0; font-size: 1.1rem; color: var(--primary-color); }
+        .feature-card p { margin-bottom: 0; font-size: 0.95rem; }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: #6a737d;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+            body { padding: 1rem; }
+        }
     </style>
 </head>
 <body>
-<h1>Quick9 Drawer</h1>
+
+<header>
+    <img src="images/icon.png" alt="Quick9 Drawer Icon" class="app-icon">
+    <div>
+        <h1>Quick9 Drawer</h1>
+        <p>Fast, keyboard-driven Android app search.</p>
+    </div>
+</header>
+
+<section class="hero">
+    <img src="images/main-image.png" alt="Quick9 Drawer Main Preview" class="hero-image">
+</section>
+
 <p>A fast, keyboard-driven Android app drawer inspired by App Swap. Use the T9 keypad interface to search and launch apps at lightning speed.</p>
+
+<section class="screenshots">
+    <div class="screenshot-item">
+        <img src="images/Screenshot_1.png" alt="Screenshot 1">
+    </div>
+    <div class="screenshot-item">
+        <img src="images/Screenshot_2.png" alt="Screenshot 2">
+    </div>
+    <div class="screenshot-item">
+        <img src="images/Screenshot_3.png" alt="Screenshot 3">
+    </div>
+</section>
+
 <h2>Core Features</h2>
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>T9 Incremental Search</h3>
+        <p>Quickly narrow down apps using a 3x4 T9 keypad. Supports English and normalized characters.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Auto-Launch (Zero-Tap)</h3>
+        <p>Automatically launches the app if the search query is 2+ characters long and there is exactly one candidate.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Frequency-Based Sorting</h3>
+        <p>Prioritizes apps with higher launch counts. Ties are broken by ascending name order.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Biometric App Lock</h3>
+        <p>Protect specific apps using Android's biometric authentication (Fingerprint, Face, PIN). (Pro upgrade).</p>
+    </div>
+</div>
+
 <ul>
-<li><strong>T9 Incremental Search</strong>: Quickly narrow down apps using a 3x4 T9 keypad. Supports English and normalized characters (removal of accents).</li>
-<li><strong>Auto-Launch (Zero-Tap)</strong>: Automatically launches the app if the search query is 2 or more characters long and there is exactly one candidate.</li>
-<li><strong>Frequency-Based Sorting</strong>: Prioritizes apps with higher launch counts. Ties are broken by ascending name order.</li>
-<li><strong>Biometric App Lock</strong>: Protect specific apps using Android&#39;s biometric authentication (Fingerprint, Face, PIN). (Requires Pro upgrade).</li>
-<li><strong>Transparent UI</strong>: A modern dialog-style interface with a transparent background.</li>
-<li><strong>Guide Display</strong>: Long-press any button on the T9 keypad to see a hover description of its function.</li>
-<li><strong>Persistent Cache &amp; Auto-Update</strong>: Achieves fast startup by caching app metadata in JSON format. Automatically updates the cache when app configuration changes (install/uninstall) are detected at startup.</li>
-<li><strong>Manual Cache Refresh</strong>: Rebuild the cache manually from the settings screen if the app list is not up-to-date.</li>
-<li><strong>Debug Error Display</strong>: In debug builds, displays a detailed stack trace if data export/import fails, allowing it to be copied to the clipboard.</li>
+    <li><strong>Transparent UI</strong>: A modern dialog-style interface with a transparent background.</li>
+    <li><strong>Guide Display</strong>: Long-press any button on the T9 keypad to see a hover description of its function.</li>
+    <li><strong>Persistent Cache &amp; Auto-Update</strong>: Achieves fast startup by caching app metadata in JSON format.</li>
+    <li><strong>Manual Cache Refresh</strong>: Rebuild the cache manually from the settings screen if the app list is not up-to-date.</li>
+    <li><strong>Debug Error Display</strong>: In debug builds, displays a detailed stack trace if data export/import fails.</li>
 </ul>
+
 <h2>External Specifications</h2>
 <h3>Search and Filtering</h3>
 <ul>
-<li><strong>Algorithm</strong>: Supports prefix matching for the entire app name or each word (delimited by spaces, hyphens, underscores, dots).</li>
-<li><strong>T9 Mapping</strong>: Standard mapping (2: ABC, 3: DEF, 4: GHI, 5: JKL, 6: MNO, 7: PQRS, 8: TUV, 9: WXYZ).</li>
-<li><strong>Normalization</strong>: Search is case-insensitive and ignores diacritical marks (e.g., &quot;á&quot; matches &quot;a&quot;).</li>
+    <li><strong>Algorithm</strong>: Supports prefix matching for the entire app name or each word (delimited by spaces, hyphens, underscores, dots).</li>
+    <li><strong>T9 Mapping</strong>: Standard mapping (2: ABC, 3: DEF, 4: GHI, 5: JKL, 6: MNO, 7: PQRS, 8: TUV, 9: WXYZ).</li>
+    <li><strong>Normalization</strong>: Search is case-insensitive and ignores diacritical marks (e.g., "á" matches "a").</li>
 </ul>
+
 <h3>Auto-Launch Conditions</h3>
 <p>The app will automatically launch if all the following conditions are met:</p>
 <ol>
-<li>The numeric query length is <strong>2 or more characters</strong>.</li>
-<li>There is <strong>exactly one</strong> app candidate after filtering.</li>
+    <li>The numeric query length is <strong>2 or more characters</strong>.</li>
+    <li>There is <strong>exactly one</strong> app candidate after filtering.</li>
 </ol>
+
 <h3>Pro Upgrade (Paid Option)</h3>
-<p>The &quot;App Lock&quot; feature is provided as a paid option (Pro upgrade).</p>
+<p>The "App Lock" feature is provided as a paid option (Pro upgrade).</p>
 <ul>
-<li><strong>Price</strong>: $1</li>
-<li><strong>Upgrade Method</strong>: Select &quot;Upgrade to Pro ($1)&quot; from the settings dialog (<code>#</code> key) and purchase via the Google Play Store.</li>
-<li><strong>Functionality</strong>: Pro upgrade enables locking and unlocking of apps.</li>
+    <li><strong>Price</strong>: $1</li>
+    <li><strong>Upgrade Method</strong>: Select "Upgrade to Pro ($1)" from the settings dialog (<code>#</code> key) and purchase via the Google Play Store.</li>
+    <li><strong>Functionality</strong>: Pro upgrade enables locking and unlocking of apps.</li>
 </ul>
+
 <h3>UI and Operations</h3>
 <ul>
-<li><strong>T9 Keypad</strong>:<ul>
-<li><strong>Long-press</strong> each key to display its functional description.</li>
-<li><code>1</code> (backspace): Backspace (delete one character)</li>
-<li><code>*</code> (clear): Clear query</li>
-<li><code>0</code> (hide): Hide keypad (expand app list)</li>
-<li><code>#</code> (config): Show settings dialog</li>
+    <li><strong>T9 Keypad</strong>:
+        <ul>
+            <li><strong>Long-press</strong> each key to display its functional description.</li>
+            <li><code>1</code> (backspace): Backspace (delete one character)</li>
+            <li><code>*</code> (clear): Clear query</li>
+            <li><code>0</code> (hide): Hide keypad (expand app list)</li>
+            <li><code>#</code> (config): Show settings dialog</li>
+        </ul>
+    </li>
+    <li><strong>App Icons</strong>:
+        <ul>
+            <li><strong>Single Tap</strong>: Launch app (shows biometric authentication if locked).</li>
+            <li><strong>Long Press</strong>: Toggle app lock on/off.</li>
+        </ul>
+    </li>
+    <li><strong>Auto-Reset</strong>: Automatically shows the keypad and resets the scroll position to the top when the query changes or the app returns to the foreground.</li>
 </ul>
-</li>
-<li><strong>App Icons</strong>:<ul>
-<li><strong>Single Tap</strong>: Launch app (shows biometric authentication if locked).</li>
-<li><strong>Long Press</strong>: Toggle app lock on/off.</li>
-</ul>
-</li>
-<li><strong>Auto-Reset</strong>: Automatically shows the keypad and resets the scroll position to the top when the query changes or the app returns to the foreground.</li>
-</ul>
+
 <h2>License</h2>
 <p>MIT License</p>
+
+<footer>
+    <p>&copy; RUN the TRAIL. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
