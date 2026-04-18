@@ -4,30 +4,13 @@ const { marked } = require('marked');
 
 const baseDir = 'runthetrail';
 
-const template = (title, content) => `<!DOCTYPE html>
+const template = (title, content, cssPath) => `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        h1, h2, h3 { color: #111; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        hr { border: 0; border-top: 1px solid #eee; margin: 2rem 0; }
-        ul { padding-left: 1.5rem; }
-        p { margin: 1rem 0; }
-        pre { background: #f6f8fa; padding: 1rem; overflow: auto; border-radius: 6px; }
-        code { font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 85%; }
-    </style>
+    <link rel="stylesheet" href="${cssPath}">
 </head>
 <body>
 ${content}
@@ -99,7 +82,11 @@ function processMarkdownFiles(directory) {
             title = titleMatch[1].trim().replace(/\*\*/g, '').replace(/<[^>]*>?/gm, ''); // Remove bolding and tags
         }
 
-        const finalHtml = template(title, htmlContent);
+        // 4.5 Calculate relative path to style.css
+        const depth = filePath.split(path.sep).length - baseDir.split(path.sep).length - 1;
+        const cssPath = (depth > 0 ? '../'.repeat(depth) : '') + 'style.css';
+
+        const finalHtml = template(title, htmlContent, cssPath);
 
         // 5. Save as .html
         const outPath = filePath.replace('.md', '.html');
