@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://yananob.github.io/runthetrail/index.html</loc>
+        <loc>https://runthetrail.org/</loc>
         <lastmod>2026-04-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://yananob.github.io/runthetrail/privacy.html</loc>
+        <loc>https://runthetrail.org/privacy.html</loc>
         <lastmod>2026-04-18</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://yananob.github.io/runthetrail/apps/quick9-drawer/index.html</loc>
+        <loc>https://runthetrail.org/apps/quick9-drawer/index.html</loc>
         <lastmod>2026-04-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
