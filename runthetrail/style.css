@@ -50,6 +50,13 @@ p {
     margin: 1rem 0;
 }
 
+.logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
 pre {
     background: var(--secondary-bg);
     padding: 1rem;
