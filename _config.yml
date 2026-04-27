@@ -1,3 +1,9 @@
 theme: jekyll-theme-minimal
 plugins:
   - jekyll-sitemap
+defaults:
+  -
+    scope:
+      path:            "runthetrail/**"
+    values:
+      sitemap:         false
