@@ -4,12 +4,13 @@ const { marked } = require('marked');
 
 const baseDir = 'runthetrail';
 
-const template = (title, content, cssPath) => `<!DOCTYPE html>
+const template = (title, content, cssPath, canonicalUrl) => `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
+    <link rel="canonical" href="${canonicalUrl}">
     <link rel="stylesheet" href="${cssPath}">
 </head>
 <body>
@@ -82,11 +83,20 @@ function processMarkdownFiles(directory) {
             title = titleMatch[1].trim().replace(/\*\*/g, '').replace(/<[^>]*>?/gm, ''); // Remove bolding and tags
         }
 
-        // 4.5 Calculate relative path to style.css
+        // 4.5 Calculate relative path to style.css and canonical URL
         const depth = filePath.split(path.sep).length - baseDir.split(path.sep).length - 1;
         const cssPath = (depth > 0 ? '../'.repeat(depth) : '') + 'style.css';
 
-        const finalHtml = template(title, htmlContent, cssPath);
+        const relativePath = path.relative(baseDir, filePath).split(path.sep).join('/');
+        let canonicalUrlPath = relativePath.replace(/\.md$/, '.html');
+        if (canonicalUrlPath === 'index.html') {
+            canonicalUrlPath = '';
+        } else if (canonicalUrlPath.endsWith('/index.html')) {
+            canonicalUrlPath = canonicalUrlPath.slice(0, -10);
+        }
+        const canonicalUrl = `https://runthetrail.org/${canonicalUrlPath}`;
+
+        const finalHtml = template(title, htmlContent, cssPath, canonicalUrl);
 
         // 5. Save as .html
         const outPath = filePath.replace('.md', '.html');
