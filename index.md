@@ -14,7 +14,7 @@ I'm a software engineer based in Osaka, Japan.
 
 ### 🌐 Connect with Me
 
-* **SNS:** [GitHub](https://github.com/yananob) | [Twitter / X](https://twitter.com/your_handle) | [YouTube](#) | Strava | News Picks
+* **SNS:** [GitHub](https://github.com/yananob) | [Twitter / X](https://twitter.com/yananob555) | [YouTube](https://www.youtube.com/@RUNtheTRAIL) | Strava | News Picks
 * **Contact:** [Inquiry Form](https://docs.google.com/forms/your-google-form-id) (Google Form)
 
 ---
