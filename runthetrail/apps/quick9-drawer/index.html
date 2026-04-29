@@ -39,11 +39,19 @@
             padding: 3rem 1rem;
             border-radius: 12px;
         }
-        .hero-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .video-container {
+            max-width: 320px;
+            margin: 0 auto;
+            aspect-ratio: 9 / 16;
+            border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            background: #000;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         .screenshots {
@@ -101,7 +109,14 @@
 </header>
 
 <section class="hero">
-    <img src="images/main-image.png" alt="Quick9 Drawer Main Preview" class="hero-image">
+    <div class="video-container">
+        <iframe
+            src="https://www.youtube.com/embed/dNtUSHfiHc0"
+            title="Quick9 Drawer Promotion"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
 </section>
 
 <p>A fast, keyboard-driven Android app drawer inspired by App Swap. Use the T9 keypad interface to search and launch apps at lightning speed.</p>
