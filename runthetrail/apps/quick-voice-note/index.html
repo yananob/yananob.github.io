@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Voice Note</title>
+    <link rel="canonical" href="https://runthetrail.org/apps/quick-voice-note/">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.5rem; }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-card {
+            background: var(--secondary-bg);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card h3 { margin-top: 0; font-size: 1.1rem; color: var(--primary-color); }
+        .feature-card p { margin-bottom: 0; font-size: 0.95rem; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="../../images/icon_512.png" alt="Quick Voice Note Icon" class="app-icon">
+    <div>
+        <h1>Quick Voice Note</h1>
+        <p>Instant voice-to-text dispatcher for Android.</p>
+    </div>
+</header>
+
+<p>An Android application that starts recording voice immediately upon launch and dispatches the transcribed text to a pre-configured destination.</p>
+
+<h2>Features</h2>
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>Instant Recording</h3>
+        <p>Starts listening for voice input as soon as the app opens.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Multiple Destinations</h3>
+        <p>Send your notes to Email, LINE, Calendar, or Clipboard.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Android 9.0+ Support</h3>
+        <p>Compatible with Android 9.0 (API 28) and above.</p>
+    </div>
+</div>
+
+<h2>Getting Started</h2>
+<ol>
+    <li>Open the app.</li>
+    <li>Grant the microphone permission if prompted.</li>
+    <li>Speak your note.</li>
+    <li>The app will automatically transcribe and send the text to the selected destination.</li>
+    <li>Tap "Settings" to change the destination.</li>
+</ol>
+
+<footer>
+    <p>&copy; RUN the TRAIL. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
