@@ -95,8 +95,37 @@ footer {
     text-align: center;
 }
 
+.app-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+.app-card {
+    flex: 1;
+    background: var(--secondary-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.app-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.app-card p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 1rem;
+    }
+    .app-grid {
+        flex-direction: column;
+        padding-left: 0;
     }
 }
