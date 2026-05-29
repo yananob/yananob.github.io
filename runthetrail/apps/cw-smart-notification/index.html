@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW Smart Notification</title>
+    <link rel="canonical" href="https://runthetrail.org/apps/cw-smart-notification/">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.5rem; }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-card {
+            background: var(--secondary-bg);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card h3 { margin-top: 0; font-size: 1.1rem; color: var(--primary-color); }
+        .feature-card p { margin-bottom: 0; font-size: 0.95rem; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="../../images/icon_512.png" alt="CW Smart Notification Icon" class="app-icon">
+    <div>
+        <h1>CW Smart Notification</h1>
+        <p>Smart notifications for Chatwork on Android.</p>
+    </div>
+</header>
+
+<p>CW Smart Notification is an Android app that periodically checks for unread messages on Chatwork and provides smart notifications for messages directed to you.</p>
+
+<h2>Key Features</h2>
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>Periodic Polling</h3>
+        <p>Checks the Chatwork API every 15 minutes and notifies you if there are new unread messages.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Mention Filter</h3>
+        <p>Notifies you only of replies to you or messages where you are specified in the "TO" field.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Quiet Hours</h3>
+        <p>Allows you to specify time periods, such as nighttime, when you do not want to receive notifications.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Notification History</h3>
+        <p>View the history of notified messages within the app and navigate directly to the corresponding message in Chatwork.</p>
+    </div>
+</div>
+
+<h2>How to Use</h2>
+
+<h3>1. Obtain a Chatwork API Token</h3>
+<p>To use this app, you need a Chatwork API token.</p>
+<ol>
+    <li>Log in to <a href="https://www.chatwork.com/">Chatwork</a>.</li>
+    <li>Click the profile icon in the upper right corner and select "API Settings."</li>
+    <li>Enter your password, click "Display," and copy the issued API token.</li>
+</ol>
+
+<h3>2. App Configuration</h3>
+<ol>
+    <li>Launch the app.</li>
+    <li>On the first launch, grant the necessary notification permissions.</li>
+    <li>Tap the settings icon (gear) in the upper right corner.</li>
+    <li>Paste the token you just copied into the "Chatwork API Token" field.</li>
+    <li>Configure options like "Mentions Only" or "Enable Quiet Hours" as needed.</li>
+    <li>Tap the "Save" button.</li>
+</ol>
+
+<hr>
+
+<h2>Notes</h2>
+<ul>
+    <li>This app is a supplementary application for Chatwork and is not an application provided by Chatwork or kubell Inc.</li>
+    <li>"Chatwork" and its logos are trademarks or registered trademarks of kubell Inc.</li>
+</ul>
+
+<footer>
+    <p>&copy; RUN the TRAIL. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
