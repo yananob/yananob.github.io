@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW Smart Notification</title>
+    <link rel="canonical" href="https://runthetrail.org/apps/cw-smart-notification/">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.2rem; }
+
+        .badge-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        .play-badge {
+            height: 60px;
+            width: auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-card {
+            background: var(--secondary-bg);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card h3 { margin-top: 0; font-size: 1.1rem; color: var(--primary-color); }
+        .feature-card p { margin-bottom: 0; font-size: 0.95rem; }
+
+        .instruction-box {
+            background: #f6f8fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        .instruction-box h3 { margin-top: 0; }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="../../images/icon_512.png" alt="CW Smart Notification Icon" class="app-icon">
+    <div>
+        <h1>CW Smart Notification</h1>
+        <p>Chatwork の未読メッセージをスマートに通知</p>
+        <a href="https://play.google.com/store/apps/details?id=io.github.yananob.cw_smart_notification" class="badge-link">
+            <img src="images/google-play-badge.png" alt="Google Play で手に入れよう" class="play-badge">
+        </a>
+    </div>
+</header>
+
+<section>
+    <p>Chatwork の未読メッセージを定期的にチェックし、自分宛てのメッセージなどをスマートに通知する Android アプリです。</p>
+</section>
+
+<h2>主な機能</h2>
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>定期ポーリング</h3>
+        <p>15分ごとに Chatwork API を確認し、新しい未読メッセージがあれば通知します。</p>
+    </div>
+    <div class="feature-card">
+        <h3>自分宛てフィルタ</h3>
+        <p>自分への返信や TO 指定されたメッセージのみを通知するフィルタ機能。</p>
+    </div>
+    <div class="feature-card">
+        <h3>消灯時間設定</h3>
+        <p>夜間など、通知を受け取りたくない時間帯を指定できます。</p>
+    </div>
+    <div class="feature-card">
+        <h3>通知履歴</h3>
+        <p>アプリ内で通知されたメッセージの履歴を確認し、直接 Chatwork の該当メッセージへ遷移できます。</p>
+    </div>
+</div>
+
+<h2>導入方法</h2>
+
+<div class="instruction-box">
+    <h3>1. Chatwork API トークンの取得</h3>
+    <p>本アプリを利用するには、Chatwork の API トークンが必要です。</p>
+    <ol>
+        <li>Chatwork にログインします。</li>
+        <li>画面右上のプロフィールアイコンをクリックし、「API 設定」を選択します。</li>
+        <li>パスワードを入力して「表示」をクリックし、発行された API トークンをコピーします。</li>
+    </ol>
+</div>
+
+<div class="instruction-box">
+    <h3>2. アプリの設定</h3>
+    <ol>
+        <li>アプリを起動します。</li>
+        <li>初回起動時に通知権限の許可を求められるので、許可してください。</li>
+        <li>画面右上の設定アイコン（歯車）をタップします。</li>
+        <li>「Chatwork API トークン」欄に、先ほどコピーしたトークンを貼り付けます。</li>
+        <li>必要に応じて「自分宛てのみ」や「消灯時間を有効にする」を設定します。</li>
+        <li>「保存」ボタンをタップして保存します。</li>
+    </ol>
+</div>
+
+<div class="disclaimer">
+    <p>※ 当アプリはChatworkの補助アプリケーションで、Chatworkおよび株式会社kubellによるアプリケーションではありません。</p>
+    <p>※ 「Chatwork」および そのロゴマークは、株式会社kubellの商標または登録商標です。</p>
+</div>
+
+<footer>
+    <p>&copy; RUN the TRAIL. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
