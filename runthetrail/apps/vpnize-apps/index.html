@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPNize Apps</title>
+    <link rel="canonical" href="https://runthetrail.org/apps/vpnize-apps/">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.5rem; }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-card {
+            background: var(--secondary-bg);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card h3 { margin-top: 0; font-size: 1.1rem; color: var(--primary-color); }
+        .feature-card p { margin-bottom: 0; font-size: 0.95rem; }
+
+        .privacy-box {
+            background: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        .privacy-box h2 { margin-top: 0; border-bottom: none; padding-bottom: 0; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="images/icon.png" alt="VPNize Apps Icon" class="app-icon">
+    <div>
+        <h1>VPNize Apps</h1>
+        <p>Route specific apps through secure DoT (DNS over TLS).</p>
+    </div>
+</header>
+
+<p>Take absolute control over your device's DNS traffic on an app-by-app basis!</p>
+
+<div style="text-align: center; margin: 2rem 0;">
+    <img src="images/feature-graphic.png" alt="VPNize Apps Feature Graphic" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+</div>
+
+<p>"I want to secure my private browsing with high-security DoT, but leave my corporate work apps completely untouched."<br>
+"I need to encrypt DNS queries for specific apps without routing my entire device's traffic through a third-party server."</p>
+
+<p><strong>VPNize Apps</strong> is a lightweight, secure utility designed for developers and privacy-conscious users who need precise control over their DNS over TLS (DoT) routing. By utilizing Android's native "VpnService", the app creates an isolated, on-device local VPN environment, allowing you to selectively encrypt and route DNS queries for specific applications at the OS level.</p>
+
+<h2>💡 Key Features & Specifications</h2>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>1. Granular Per-App Control</h3>
+        <p><strong>Strict Whitelist:</strong> By default, all apps are bypassed. Only the specific applications you explicitly check in the UI will have their DNS queries routed through the designated DoT server.</p>
+    </div>
+    <div class="feature-card">
+        <h3>2. Dedicated DoT Encryption</h3>
+        <p>DoT encrypts your DNS queries over Port 853. This prevents eavesdropping and tampering on untrusted networks. Supports custom DoT hostnames.</p>
+    </div>
+    <div class="feature-card">
+        <h3>3. One-Tap Global Toggle</h3>
+        <p>A prominent switch allows you to instantly start or stop the local VPN service. Activate secure routing precisely when you need it.</p>
+    </div>
+    <div class="feature-card">
+        <h3>4. Local Network Bypass</h3>
+        <p>Private IP ranges (192.168.x.x, etc.) are automatically excluded, ensuring you can still access local NAS or smart home devices.</p>
+    </div>
+    <div class="feature-card">
+        <h3>5. Always-On Support</h3>
+        <p>Operates as a Foreground Service with a persistent notification. Supports system "Always-on VPN" and auto-start on reboot.</p>
+    </div>
+</div>
+
+<div class="privacy-box">
+    <h2>🔒 Strict Data Privacy Policy</h2>
+    <p>The VPN tunnel established by this app is a purely <strong>"local VPN"</strong> that operates entirely inside your smartphone. Unlike commercial VPN services, your internet traffic is never forwarded to an external remote proxy server.</p>
+    <p><strong>VPNize Apps</strong> does not collect, log, or externally transmit any of your personal data or app traffic. The app requires zero unnecessary permissions—no location, no contacts, and no storage access are requested.</p>
+</div>
+
+<footer>
+    <p>&copy; RUN the TRAIL. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
