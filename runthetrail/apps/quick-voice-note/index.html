@@ -5,98 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Voice Note</title>
     <link rel="canonical" href="https://runthetrail.org/apps/quick-voice-note/">
-    <link rel="stylesheet" href="../../style.css">
-    <style>
-        header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
+    <link rel="icon" type="image/png" href="../../images/icon_512.png">
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
         }
-        .app-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h1 { margin: 0; font-size: 2.5rem; }
-
-        .badge-link {
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
-        .play-badge {
-            height: 60px;
-            width: auto;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        .feature-card {
-            background: var(--secondary-bg);
-            padding: 1.25rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-        .feature-card h3 { margin-top: 0; font-size: 1.1rem; color: var(--primary-color); }
-        .feature-card p { margin-bottom: 0; font-size: 0.95rem; }
-
-        @media (max-width: 600px) {
-            header { flex-direction: column; text-align: center; }
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 min-h-screen antialiased selection:bg-indigo-500 selection:text-white">
 
-<header>
-    <img src="images/icon.png" alt="Quick Voice Note Icon" class="app-icon">
-    <div>
-        <h1>Quick Voice Note</h1>
-        <p>Instant voice-to-text dispatcher for Android.</p>
-        <a href="https://play.google.com/store/apps/details?id=io.github.yananob.quick_voice_note" class="badge-link">
-            <img src="images/google-play-badge.png" alt="Get it on Google Play" class="play-badge">
-        </a>
-    </div>
-</header>
+<div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 sm:py-12 md:my-8 bg-white md:shadow-xl md:shadow-slate-100 md:border md:border-slate-100 md:rounded-3xl">
 
-<p>An Android application that starts recording voice immediately upon launch and dispatches the transcribed text to a pre-configured destination.</p>
+    <!-- Back to Home -->
+    <a href="../../" class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition duration-150 mb-8">
+        <span class="mr-1.5">&larr;</span> Back to RUN the TRAIL
+    </a>
 
-<img src="images/feature-graphic.png" alt="Quick Voice Note Feature Graphic" class="feature-graphic">
+    <!-- Header Section -->
+    <header class="flex flex-col sm:flex-row items-start sm:items-center gap-6 pb-6 border-b border-slate-100 mb-8">
+        <img src="images/icon.png" alt="Quick Voice Note Icon" class="w-20 h-20 rounded-2xl object-cover shadow-md border border-slate-100">
+        <div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Quick Voice Note</h1>
+            <p class="text-base text-slate-500 mt-1">Instant voice-to-text dispatcher for Android.</p>
+            <a href="https://play.google.com/store/apps/details?id=io.github.yananob.quick_voice_note" class="inline-block mt-3">
+                <img src="images/google-play-badge.png" alt="Get it on Google Play" class="h-[45px] w-auto hover:opacity-90 transition duration-150">
+            </a>
+        </div>
+    </header>
 
-<h2>Features</h2>
-<div class="feature-grid">
-    <div class="feature-card">
-        <h3>Instant Recording</h3>
-        <p>Starts listening for voice input as soon as the app opens.</p>
-    </div>
-    <div class="feature-card">
-        <h3>Multiple Destinations</h3>
-        <p>Send your notes to Email, LINE, Calendar, or Clipboard.</p>
-    </div>
-    <div class="feature-card">
-        <h3>Android 9.0+ Support</h3>
-        <p>Compatible with Android 9.0 (API 28) and above.</p>
-    </div>
+    <main>
+        <p class="text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            An Android application that starts recording voice immediately upon launch and dispatches the transcribed text to a pre-configured destination.
+        </p>
+
+        <!-- Feature Graphic -->
+        <div class="my-8 text-center">
+            <img src="images/feature-graphic.png" alt="Quick Voice Note Feature Graphic" class="w-full max-w-2xl mx-auto rounded-2xl shadow-lg border border-slate-100">
+        </div>
+
+        <!-- Features -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 border-b border-slate-100 pb-3 mb-6">Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Instant Recording</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Starts listening for voice input as soon as the app opens.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Multiple Destinations</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Send your notes to Email, LINE, Calendar, or Clipboard.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Android 9.0+ Support</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Compatible with Android 9.0 (API 28) and above.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section class="mb-12 bg-slate-50/50 border border-slate-100 rounded-2xl p-6 sm:p-8">
+            <h2 class="text-xl font-bold tracking-tight text-slate-900 mb-6">🚀 Getting Started</h2>
+            <ol class="space-y-4">
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">1</span>
+                    <p class="text-slate-600 leading-relaxed pt-0.5">Open the app.</p>
+                </li>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">2</span>
+                    <p class="text-slate-600 leading-relaxed pt-0.5">Grant the microphone permission if prompted.</p>
+                </li>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">3</span>
+                    <p class="text-slate-600 leading-relaxed pt-0.5">Speak your note.</p>
+                </li>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">4</span>
+                    <p class="text-slate-600 leading-relaxed pt-0.5">The app will automatically transcribe and send the text to the selected destination.</p>
+                </li>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm">5</span>
+                    <p class="text-slate-600 leading-relaxed pt-0.5">Tap <strong class="text-slate-800 font-semibold">"Settings"</strong> to change the destination.</p>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 pt-8 border-t border-slate-100 text-center text-sm text-slate-400">
+        <p>&copy; 2026 RUN the TRAIL. All rights reserved.</p>
+    </footer>
+
 </div>
-
-<h2>Getting Started</h2>
-<ol>
-    <li>Open the app.</li>
-    <li>Grant the microphone permission if prompted.</li>
-    <li>Speak your note.</li>
-    <li>The app will automatically transcribe and send the text to the selected destination.</li>
-    <li>Tap "Settings" to change the destination.</li>
-</ol>
-
-<footer>
-    <p>&copy; RUN the TRAIL. All rights reserved.</p>
-</footer>
 
 </body>
 </html>

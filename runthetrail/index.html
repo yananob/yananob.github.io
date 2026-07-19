@@ -6,68 +6,196 @@
     <title>RUN the TRAIL</title>
     <link rel="canonical" href="https://runthetrail.org/">
     <link rel="icon" type="image/png" href="images/icon_512.png">
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-<div class="header-container">
-    <img src="images/logo_large.jpg" alt="RUN the TRAIL Logo" class="main-logo">
-    <h1><img src="images/icon_512.png" alt="" class="title-icon"> RUN the TRAIL</h1>
+<body class="bg-slate-50 text-slate-800 min-h-screen antialiased selection:bg-indigo-500 selection:text-white">
+
+<div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 sm:py-12 md:my-8 bg-white md:shadow-xl md:shadow-slate-100 md:border md:border-slate-100 md:rounded-3xl">
+
+    <!-- Header Section -->
+    <header class="mb-10 text-left">
+        <img src="images/logo_large.jpg" alt="RUN the TRAIL Logo" class="w-full h-auto rounded-2xl object-cover mb-8 shadow-sm">
+        <div class="flex items-center gap-4">
+            <img src="images/icon_512.png" alt="" class="w-12 h-12 rounded-2xl shadow-md border border-slate-100">
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">RUN the TRAIL</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Introduction -->
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+            Welcome to <strong class="text-slate-900 font-semibold">RUN the TRAIL</strong>, a software development organization dedicated to software innovation and technical excellence.
+        </p>
+
+        <!-- What We Do -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 border-b border-slate-100 pb-3 mb-6">🛠 What We Do</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Web &amp; Mobile App Development</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Crafting seamless, fast, and secure digital experiences across web and mobile platforms.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Consulting Services</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Leveraging extensive software engineering knowledge to provide strategic technical guidance.</p>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Knowledge Sharing</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Actively contributing to the developer community through valuable information sharing and insights.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 border-b border-slate-100 pb-3 mb-6">📂 Portfolio</h2>
+
+            <!-- Android Apps Subsection -->
+            <div class="mb-10">
+                <h3 class="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="text-indigo-500">📱</span> Android Applications
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Quick9 Drawer -->
+                    <div class="group relative flex flex-col justify-between bg-white border border-slate-150 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="apps/quick9-drawer/images/icon.png" alt="" class="w-10 h-10 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform duration-200">
+                                <h4 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">
+                                    <a href="apps/quick9-drawer/" class="after:absolute after:inset-0">Quick9 Drawer</a>
+                                </h4>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">A fast, keyboard-driven Android app search tool using a T9 keypad interface.</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Voice Note -->
+                    <div class="group relative flex flex-col justify-between bg-white border border-slate-150 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="apps/quick-voice-note/images/icon.png" alt="" class="w-10 h-10 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform duration-200">
+                                <h4 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">
+                                    <a href="apps/quick-voice-note/" class="after:absolute after:inset-0">Quick Voice Note</a>
+                                </h4>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">An Android application that starts recording voice immediately upon launch.</p>
+                        </div>
+                    </div>
+
+                    <!-- CW Smart Notification -->
+                    <div class="group relative flex flex-col justify-between bg-white border border-slate-150 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="apps/cw-smart-notification/images/icon.png" alt="" class="w-10 h-10 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform duration-200">
+                                <h4 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">
+                                    <a href="apps/cw-smart-notification/" class="after:absolute after:inset-0">CW Smart Notification</a>
+                                </h4>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">A smart notification tool for Chatwork unread messages on Android.</p>
+                        </div>
+                    </div>
+
+                    <!-- VPNize Apps -->
+                    <div class="group relative flex flex-col justify-between bg-white border border-slate-150 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="apps/vpnize-apps/images/icon.png" alt="" class="w-10 h-10 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform duration-200">
+                                <h4 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">
+                                    <a href="apps/vpnize-apps/" class="after:absolute after:inset-0">VPNize Apps</a>
+                                </h4>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">Route specific apps through secure DoT (DNS over TLS) with strict whitelist split-tunneling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web App Subsection -->
+            <div class="mb-10">
+                <h3 class="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="text-indigo-500">💻</span> Web Applications
+                </h3>
+                <div class="bg-white border border-slate-150 rounded-2xl p-5 shadow-sm flex justify-between items-center">
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-lg">Live Demo</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Explore interactive web solutions and utilities built by RUN the TRAIL.</p>
+                    </div>
+                    <a href="#" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl transition duration-150 shadow-sm shadow-indigo-100">Open App</a>
+                </div>
+            </div>
+
+            <!-- Kindle Books Subsection -->
+            <div>
+                <h3 class="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="text-indigo-500">📚</span> Kindle Publications
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Book 1 -->
+                    <div class="group relative flex flex-col justify-between bg-white border border-slate-150 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="images/bizarre.jpg" alt="" class="w-10 h-14 rounded-md object-cover shadow-sm group-hover:scale-105 transition-transform duration-200">
+                                <h4 class="font-bold text-slate-900 text-sm group-hover:text-indigo-600 transition-colors">
+                                    <a href="https://www.amazon.co.jp/dp/B0FDFQLZWV?tag=runthetrail-22" class="after:absolute after:inset-0">Shige-san and Ai-bo's Curious Downtown Case Files</a>
+                                </h4>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">A heart-warming mystery novel set in a traditional Japanese downtown, featuring a veteran detective and his AI robot partner.</p>
+                        </div>
+                    </div>
+
+                    <!-- Book 2 -->
+                    <div class="group relative flex flex-col justify-between bg-white border border-slate-150 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <img src="images/gs-short-short.jpeg" alt="" class="w-10 h-14 rounded-md object-cover shadow-sm group-hover:scale-105 transition-transform duration-200">
+                                <h4 class="font-bold text-slate-900 text-sm group-hover:text-indigo-600 transition-colors">
+                                    <a href="https://www.amazon.co.jp/dp/B0H9HLSFZH?tag=runthetrail-22" class="after:absolute after:inset-0">G's short-short</a>
+                                </h4>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">A fascinating collection of humor, mystery, history, and sci-fi short-short stories that spark the imagination.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 border-b border-slate-100 pb-3 mb-6">🌐 Connect</h2>
+            <div class="flex flex-wrap gap-4 items-center mb-6">
+                <a href="https://github.com/yananob" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold rounded-xl transition duration-150 shadow-sm">GitHub</a>
+                <a href="https://x.com/yananob555" class="px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold rounded-xl transition duration-150 shadow-sm">X (Twitter)</a>
+                <a href="https://www.youtube.com/@RUNtheTRAIL" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-xl transition duration-150 shadow-sm">YouTube</a>
+                <a href="https://forms.gle/RDmvDTy8ppUmsom19" class="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold rounded-xl transition duration-150 shadow-sm">Inquiry Form <span class="text-xs font-normal opacity-80">(Google Forms)</span></a>
+            </div>
+        </section>
+
+        <!-- Legal -->
+        <section class="mb-6">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 border-b border-slate-100 pb-3 mb-4">📄 Legal</h2>
+            <a href="privacy.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold transition duration-150">
+                Privacy Policy <span class="ml-1">→</span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="mt-16 pt-8 border-t border-slate-100 text-center text-sm text-slate-400">
+        <p>&copy; 2026 RUN the TRAIL. All rights reserved.</p>
+    </footer>
+
 </div>
-<p>Welcome to <strong>RUN the TRAIL</strong>, a software development organization dedicated to software innovation and technical excellence.</p>
-<h3>🛠 What We Do</h3>
-<ul>
-<li><strong>Web &amp; Mobile App Development:</strong> Crafting seamless digital experiences across platforms.</li>
-<li><strong>Consulting Services:</strong> Leveraging extensive software engineering knowledge to provide strategic technical guidance.</li>
-<li><strong>Knowledge Sharing:</strong> Actively contributing to the tech community through information dissemination and insights.</li>
-</ul>
-<hr>
-<h3>📂 Portfolio</h3>
-<ul>
-<li><strong>Android Apps:</strong>
-    <div class="app-grid">
-        <div class="app-card">
-            <h4><img src="apps/quick9-drawer/images/icon.png" alt="" class="app-icon-small"> <a href="apps/quick9-drawer/">Quick9 Drawer</a></h4>
-            <p>A fast, keyboard-driven Android app search tool using a T9 keypad interface.</p>
-        </div>
-        <div class="app-card">
-            <h4><img src="apps/quick-voice-note/images/icon.png" alt="" class="app-icon-small"> <a href="apps/quick-voice-note/">Quick Voice Note</a></h4>
-            <p>An Android application that starts recording voice immediately upon launch.</p>
-        </div>
-        <div class="app-card">
-            <h4><img src="apps/cw-smart-notification/images/icon.png" alt="" class="app-icon-small"> <a href="apps/cw-smart-notification/">CW Smart Notification</a></h4>
-            <p>A smart notification tool for Chatwork unread messages on Android.</p>
-        </div>
-        <div class="app-card">
-            <h4><img src="apps/vpnize-apps/images/icon.png" alt="" class="app-icon-small"> <a href="apps/vpnize-apps/">VPNize Apps</a></h4>
-            <p>Route specific apps through secure DoT (DNS over TLS) with strict whitelist split-tunneling.</p>
-        </div>
-    </div>
-</li>
-<li><strong>Web App:</strong> <a href="#">Live Demo</a></li>
-<li><strong>Kindle Books:</strong>
-    <div class="app-grid">
-        <div class="app-card">
-            <h4><img src="images/bizarre.jpg" alt="" class="app-icon-small"> <a href="https://www.amazon.co.jp/dp/B0FDFQLZWV?tag=runthetrail-22">Shige-san and Ai-bo's Curious Downtown Case Files</a></h4>
-            <p>A heart-warming mystery novel set in a traditional Japanese downtown, featuring a veteran detective and his AI robot partner.</p>
-        </div>
-        <div class="app-card">
-            <h4><img src="images/gs-short-short.jpeg" alt="" class="app-icon-small"> <a href="https://www.amazon.co.jp/dp/B0H9HLSFZH?tag=runthetrail-22">G's short-short</a></h4>
-            <p>A fascinating collection of humor, mystery, history, and sci-fi short-short stories that spark the imagination.</p>
-        </div>
-    </div>
-</li>
-</ul>
-<hr>
-<h3>🌐 Connect</h3>
-<ul>
-<li><strong>SNS:</strong> <a href="https://github.com/yananob">GitHub</a> | <a href="https://x.com/yananob555">X (Twitter)</a> | <a href="https://www.youtube.com/@RUNtheTRAIL">YouTube</a></li>
-<li><strong>Contact:</strong> <a href="https://forms.gle/RDmvDTy8ppUmsom19">Inquiry Form</a> (Google Form)</li>
-</ul>
-<hr>
-<h3>📄 Legal</h3>
-<ul>
-<li><a href="privacy.html">Privacy Policy</a></li>
-</ul>
 
 </body>
 </html>
