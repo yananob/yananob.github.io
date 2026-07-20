@@ -1,145 +1,125 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CW Smart Notification</title>
     <link rel="canonical" href="https://runthetrail.org/apps/cw-smart-notification/">
-    <link rel="stylesheet" href="../../style.css">
-    <style>
-        header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
+    <link rel="icon" type="image/png" href="../../images/icon_512.png">
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
         }
-        .app-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h1 { margin: 0; font-size: 2.2rem; }
-
-        .badge-link {
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
-        .play-badge {
-            height: 60px;
-            width: auto;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        .feature-card {
-            background: var(--secondary-bg);
-            padding: 1.25rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-        .feature-card h3 { margin-top: 0; font-size: 1.1rem; color: var(--primary-color); }
-        .feature-card p { margin-bottom: 0; font-size: 0.95rem; }
-
-        .instruction-box {
-            background: #f6f8fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--primary-color);
-        }
-        .instruction-box h3 { margin-top: 0; }
-
-        .disclaimer {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        @media (max-width: 600px) {
-            header { flex-direction: column; text-align: center; }
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 min-h-screen antialiased selection:bg-indigo-500 selection:text-white">
 
-<header>
-    <img src="images/icon.png" alt="CW Smart Notification Icon" class="app-icon">
-    <div>
-        <h1>CW Smart Notification</h1>
-        <p>Chatwork の未読メッセージをスマートに通知</p>
-        <a href="https://play.google.com/store/apps/details?id=io.github.yananob.cw_smart_notification" class="badge-link">
-            <img src="images/google-play-badge.png" alt="Google Play で手に入れよう" class="play-badge">
-        </a>
-    </div>
-</header>
+<div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 sm:py-12 md:my-8 bg-white md:shadow-xl md:shadow-slate-100 md:border md:border-slate-100 md:rounded-3xl">
 
-<section>
-    <p>Chatwork の未読メッセージを定期的にチェックし、自分宛てのメッセージなどをスマートに通知する Android アプリです。</p>
-</section>
+    <!-- Back to Home -->
+    <a href="../../" class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition duration-150 mb-8">
+        <span class="mr-1.5">&larr;</span> Back to RUN the TRAIL
+    </a>
 
-<img src="images/feature-graphic.png" alt="CW Smart Notification Feature Graphic" class="feature-graphic">
+    <!-- Header Section -->
+    <header class="flex flex-col sm:flex-row items-start sm:items-center gap-6 pb-6 border-b border-slate-100 mb-8">
+        <img src="images/icon.png" alt="CW Smart Notification Icon" class="w-20 h-20 rounded-2xl object-cover shadow-md border border-slate-100">
+        <div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">CW Smart Notification</h1>
+            <p class="text-base text-slate-500 mt-1">Smart notifications for Chatwork unread messages on Android.</p>
+            <a href="https://play.google.com/store/apps/details?id=io.github.yananob.cw_smart_notification" class="inline-block mt-3">
+                <img src="images/google-play-badge.png" alt="Get it on Google Play" class="h-[45px] w-auto hover:opacity-90 transition duration-150">
+            </a>
+        </div>
+    </header>
 
-<h2>主な機能</h2>
-<div class="feature-grid">
-    <div class="feature-card">
-        <h3>定期ポーリング</h3>
-        <p>15分ごとに Chatwork API を確認し、新しい未読メッセージがあれば通知します。</p>
-    </div>
-    <div class="feature-card">
-        <h3>自分宛てフィルタ</h3>
-        <p>自分への返信や TO 指定されたメッセージのみを通知するフィルタ機能。</p>
-    </div>
-    <div class="feature-card">
-        <h3>消灯時間設定</h3>
-        <p>夜間など、通知を受け取りたくない時間帯を指定できます。</p>
-    </div>
-    <div class="feature-card">
-        <h3>通知履歴</h3>
-        <p>アプリ内で通知されたメッセージの履歴を確認し、直接 Chatwork の該当メッセージへ遷移できます。</p>
-    </div>
+    <main>
+        <p class="text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            An Android application that periodically checks your Chatwork unread messages and smartly notifies you of mentions and relevant updates.
+        </p>
+
+        <!-- Feature Graphic -->
+        <div class="my-8 text-center">
+            <img src="images/feature-graphic.png" alt="CW Smart Notification Feature Graphic" class="w-full max-w-2xl mx-auto rounded-2xl shadow-lg border border-slate-100">
+        </div>
+
+        <!-- Features -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 border-b border-slate-100 pb-3 mb-6">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Periodic Polling</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Checks the Chatwork API every 15 minutes and notifies you if there are new unread messages.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Mention Filter</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Filter notifications to only receive alerts for direct mentions (TO) or replies.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Quiet Hours</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Specify time ranges (e.g., at night) when you don't want to be disturbed by notifications.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Notification History</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Review your notification history within the app and jump directly to the message in Chatwork via deep links.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup Instructions -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 border-b border-slate-100 pb-3 mb-6">How to Setup</h2>
+
+            <!-- Step 1 Box -->
+            <div class="bg-slate-50/50 border border-slate-100 rounded-2xl p-6 sm:p-8 mb-6">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">1. Obtain Chatwork API Token</h3>
+                <p class="text-sm text-slate-600 mb-4">To use this app, you need a Chatwork API token.</p>
+                <ol class="space-y-2.5 list-decimal list-inside text-sm text-slate-600">
+                    <li>Log in to Chatwork.</li>
+                    <li>Click your profile icon in the top-right corner and select <strong class="text-slate-800">"API Settings"</strong>.</li>
+                    <li>Enter your password, click <strong class="text-slate-800">"Display"</strong>, and copy the generated API token.</li>
+                </ol>
+            </div>
+
+            <!-- Step 2 Box -->
+            <div class="bg-slate-50/50 border border-slate-100 rounded-2xl p-6 sm:p-8">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">2. Configure the App</h3>
+                <ol class="space-y-2.5 list-decimal list-inside text-sm text-slate-600">
+                    <li>Launch the app.</li>
+                    <li>Grant notification permissions when prompted on first launch.</li>
+                    <li>Tap the settings icon (gear) in the top-right corner.</li>
+                    <li>Paste your copied token into the <strong class="text-slate-800">"Chatwork API Token"</strong> field.</li>
+                    <li>Optionally configure <strong class="text-slate-800">"Mentions Only"</strong> or <strong class="text-slate-800">"Quiet Hours"</strong>.</li>
+                    <li>Tap <strong class="text-slate-800">"Save"</strong> to save your settings.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="mt-12 pt-6 border-t border-slate-100 text-xs text-slate-400 space-y-2 leading-relaxed">
+            <p>※ This app is an unofficial helper application for Chatwork and is not affiliated with Chatwork or kubell Co., Ltd.</p>
+            <p>※ "Chatwork" and its logo are trademarks or registered trademarks of kubell Co., Ltd.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 pt-8 border-t border-slate-100 text-center text-sm text-slate-400">
+        <p>&copy; 2026 RUN the TRAIL. All rights reserved.</p>
+    </footer>
+
 </div>
-
-<h2>導入方法</h2>
-
-<div class="instruction-box">
-    <h3>1. Chatwork API トークンの取得</h3>
-    <p>本アプリを利用するには、Chatwork の API トークンが必要です。</p>
-    <ol>
-        <li>Chatwork にログインします。</li>
-        <li>画面右上のプロフィールアイコンをクリックし、「API 設定」を選択します。</li>
-        <li>パスワードを入力して「表示」をクリックし、発行された API トークンをコピーします。</li>
-    </ol>
-</div>
-
-<div class="instruction-box">
-    <h3>2. アプリの設定</h3>
-    <ol>
-        <li>アプリを起動します。</li>
-        <li>初回起動時に通知権限の許可を求められるので、許可してください。</li>
-        <li>画面右上の設定アイコン（歯車）をタップします。</li>
-        <li>「Chatwork API トークン」欄に、先ほどコピーしたトークンを貼り付けます。</li>
-        <li>必要に応じて「自分宛てのみ」や「消灯時間を有効にする」を設定します。</li>
-        <li>「保存」ボタンをタップして保存します。</li>
-    </ol>
-</div>
-
-<div class="disclaimer">
-    <p>※ 当アプリはChatworkの補助アプリケーションで、Chatworkおよび株式会社kubellによるアプリケーションではありません。</p>
-    <p>※ 「Chatwork」および そのロゴマークは、株式会社kubellの商標または登録商標です。</p>
-</div>
-
-<footer>
-    <p>&copy; RUN the TRAIL. All rights reserved.</p>
-</footer>
 
 </body>
 </html>
