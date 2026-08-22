@@ -43,7 +43,7 @@
 
     <main>
         <p class="text-lg font-medium text-slate-700 leading-relaxed mb-6">
-            Chatworkの未読メッセージを定期的に確認し、自分宛てのメンションや重要な更新をスマートに通知するAndroidアプリケーションです。
+            大勢が参加するグループチャットや夜間・休日の通知に疲れていませんか？『スマート通知 for Chatwork』は、Chatworkの未読メッセージをバックグラウンドで定期確認し、自分宛ての重要メッセージのみを精緻にフィルタリングしてシステム通知するAndroidアプリケーションです。
         </p>
 
         <!-- Feature Graphic -->
@@ -57,23 +57,31 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Feature 1 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
-                    <h3 class="font-bold text-slate-900 text-base mb-2">定期ポーリング</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">15分ごとにChatwork APIをチェックし、新しい未読メッセージがある場合に通知します。</p>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">自分宛てメッセージの抽出・フィルタリング</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        本文内の <code class="bg-slate-200/70 text-slate-800 px-1.5 py-0.5 rounded text-xs">[To:account_id]</code> や <code class="bg-slate-200/70 text-slate-800 px-1.5 py-0.5 rounded text-xs">[rp aid=account_id]</code> を認識し、自分宛てのメッセージのみを自動判定して通知します。引用記号 <code class="bg-slate-200/70 text-slate-800 px-1.5 py-0.5 rounded text-xs">[qt]...[/qt]</code> 内のメンションは自動スキップし誤通知を予防。自分からの送信メッセージ除外フィルターも搭載。
+                    </p>
                 </div>
                 <!-- Feature 2 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
-                    <h3 class="font-bold text-slate-900 text-base mb-2">メンションフィルター</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">自分宛ての直接メンション（TO）や返信メッセージのみを対象に通知を行うようフィルター設定が可能です。</p>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">柔軟な通知抑止スケジュール設定</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        曜日タイプ（平日、休日・祝日、毎日）と時間帯（開始〜終了）の組み合わせによる抑止ルールを複数設定可能。抑止時間中もメッセージ同期・履歴保存はバックグラウンドで継続されるため、通知音やバイブのみを抑えて情報は逃しません。
+                    </p>
                 </div>
                 <!-- Feature 3 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
-                    <h3 class="font-bold text-slate-900 text-base mb-2">サイレント時間帯</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">夜間など、通知を受け取りたくない時間帯を指定して静かに保つことができます。</p>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">定期バックグラウンド監視</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Chatwork APIを活用して自分へのメンション（To/Reply）やダイレクトチャットをリアルタイム・定期的に監視し、必要な情報だけを逃さずキャッチできます。
+                    </p>
                 </div>
                 <!-- Feature 4 -->
                 <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:shadow-sm transition-all duration-200">
-                    <h3 class="font-bold text-slate-900 text-base mb-2">通知履歴機能</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">アプリ内で過去の通知履歴を確認し、ディープリンクを通じてChatwork内の該当メッセージへ直接ジャンプできます。</p>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">通知履歴 ＆ ディープリンク</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        過去の通知履歴をアプリ内で確認でき、ディープリンクをタップすることでChatwork内の該当メッセージへ直接スムーズにジャンプできます。
+                    </p>
                 </div>
             </div>
         </section>
