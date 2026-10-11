@@ -9,6 +9,9 @@ concurrency:
   group: githubio-main-merged
   cancel-in-progress: true
 
+permissions:
+  contents: 'write'
+
 jobs:
   create-tag:
     uses: yananob/myapps-common/.github/workflows/create-release-tag.yml@main
